@@ -1,0 +1,167 @@
+:root {
+  --ink: #4a1d3f;
+  --muted: #9b6b8f;
+  --paper: #fff0f6;
+  --card: #ffffff;
+  --line: #f7c6dd;
+  --accent: #ec4899;
+  --ok: #15803d;
+  --bad: #b91c1c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffe4f0 0%, #ffd1e8 40%, #fbc2eb 100%);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 1.75rem;
+  background: var(--card);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background-image:
+    linear-gradient(var(--card), var(--card)),
+    linear-gradient(135deg, #f472b6, #ec4899, #db2777);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 12px 30px -10px rgba(236, 72, 153, 0.35);
+}
+
+h1 {
+  margin: 0 0 1.25rem;
+  font-size: 1.4rem;
+  text-align: center;
+  background: linear-gradient(135deg, #ec4899, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.controls { margin-bottom: 1rem; }
+
+#taskInput {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff7fb;
+  margin-bottom: 0.6rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 0.55rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #f472b6, #ec4899);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px -6px rgba(236, 72, 153, 0.6);
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+button:hover { filter: brightness(1.05); }
+
+.message {
+  min-height: 1.2rem;
+  margin: 0.25rem 0 0.75rem;
+  color: var(--bad);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+#taskList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff7fb;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.task-text {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.edit-input {
+  flex: 1;
+  padding: 0.4rem 0.6rem;
+  font: inherit;
+  color: var(--ink);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.task-item button {
+  padding: 0.35rem 0.7rem;
+  font-size: 0.85rem;
+  box-shadow: none;
+}
+
+.complete-btn { background: linear-gradient(135deg, #f472b6, #ec4899); }
+.edit-btn { background: linear-gradient(135deg, #c084fc, #a855f7); }
+.remove-btn { background: linear-gradient(135deg, #fb7185, #e11d48); }
+
+.summary {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-around;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--accent);
+}
+
+.summary p { margin: 0; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
